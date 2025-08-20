@@ -1,0 +1,57 @@
+Design and develop a modern, scalable web platform for hosting hackathons and innovation events that empowers organizers, participants, and judges with smooth and reliable workflows. The platform must address common limitations of existing solutions such as lack of flexibility for student/community-led events, complex user interfaces, limited customization, manual workflow steps, and poor integration with external tools.
+
+Key features to include:
+
+Registration & Team Management:
+
+User-friendly registration supporting individual and team sign-ups with email and social login options.
+
+AI-powered team formation that suggests teammates based on skills, interests, and availability.
+
+Easy team invitations and management with real-time collaboration tools.
+
+Project Submission & Multi-Round Evaluation:
+
+Support uploading multiple artifact types: documents, GitHub links, videos.
+
+Allow multiple submission rounds with version control and deadline management.
+
+AI-assisted project review to summarize submissions, suggest scores, and generate standardized feedback for judges.
+
+Judges dashboard with streamlined scoring and real-time communication with participants.
+
+Role-Based Dashboards:
+
+Personalized dashboards for participants, organizers, and judges that adapt based on user activity and preferences.
+
+Organizers have full control for event creation, announcements, schedule management, reporting, and analytics.
+
+Participants can track team progress, submission status, and feedback easily.
+
+Judges can efficiently review, score, and communicate feedback with minimized manual effort.
+
+Real-Time Engagement & Communication:
+
+Integrated chatbots and virtual assistants to provide 24/7 support and onboarding guidance.
+
+Automated event notifications, reminders, and announcements to all users.
+
+Real-time updates and live event feeds using WebSockets or similar technology.
+
+Integrations and Scalability:
+
+Seamless integration with external platforms like Discord, GitHub, Slack.
+
+Scalable cloud architecture for handling events of all sizes without performance degradation.
+
+Ensure data security, privacy, and role-based access control.
+
+Additional AI Capabilities:
+
+Predictive analytics to forecast participation and engagement trends for organizers.
+
+Automated communication agents for personalized messaging and feedback distribution.
+
+AI code review bots to assist coding-related projects during submission review.
+
+The solution should prioritize simplicity, flexibility, and reliability for student-driven or grassroots community hackathons, providing an all-in-one platform that minimizes manual workflow and maximizes real-time engagement.
