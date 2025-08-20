@@ -20,54 +20,106 @@ export default function Dashboard() {
   }, []);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center">
+        <div className="text-center animate-fade-in-up">
+          <div className="relative mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto animate-pulse-slow">
+              <i className="fas fa-code text-white text-2xl"></i>
+            </div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl opacity-20 animate-pulse-slow -z-10"></div>
+          </div>
+          <h2 className="text-2xl font-bold text-gradient mb-2">Loading Dashboard</h2>
+          <p className="text-muted">Preparing your hackathon workspace...</p>
+          <div className="mt-6">
+            <div className="w-32 h-1 bg-gray-200 rounded-full mx-auto">
+              <div className="progress-bar h-1 rounded-full" style={{ width: '100%' }}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-background" data-testid="dashboard-page">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50" data-testid="dashboard-page">
       <Navbar />
       <div className="flex">
         <Sidebar userRole={user.role} />
         
         {/* Main Content */}
         <main className="flex-1 p-8">
+          {/* Welcome Section */}
+          <div className="mb-8 animate-fade-in-up">
+            <h1 className="text-3xl font-bold text-gradient mb-2">
+              Welcome back, {user.username}! 👋
+            </h1>
+            <p className="text-muted text-lg">
+              Ready to build something amazing? Your hackathon journey continues...
+            </p>
+          </div>
+
           {/* Status Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card data-testid="card-time-remaining">
+          <div className="grid md:grid-cols-3 gap-6 mb-8 animate-slide-in-right">
+            <Card className="card-enhanced hover-lift bg-white/80 backdrop-blur-sm border border-white/20" data-testid="card-time-remaining">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted" data-testid="text-time-label">Time Remaining</p>
-                    <p className="text-2xl font-bold text-foreground" data-testid="text-time-value">2d 14h 32m</p>
+                    <p className="text-3xl font-bold text-gradient" data-testid="text-time-value">2d 14h 32m</p>
+                    <div className="mt-2">
+                      <div className="w-full bg-background rounded-full h-2">
+                        <div className="progress-bar h-2 rounded-full" style={{ width: '65%' }}></div>
+                      </div>
+                      <p className="text-xs text-muted mt-1">65% of hackathon complete</p>
+                    </div>
                   </div>
-                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg">
-                    <i className="fas fa-clock text-primary text-xl"></i>
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center hover-scale">
+                      <i className="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl opacity-20 animate-pulse-slow -z-10"></div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            <Card data-testid="card-team-size">
+            
+            <Card className="card-enhanced hover-lift bg-white/80 backdrop-blur-sm border border-white/20" data-testid="card-team-size">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted" data-testid="text-team-label">Team Size</p>
-                    <p className="text-2xl font-bold text-foreground" data-testid="text-team-value">4 Members</p>
+                    <p className="text-3xl font-bold text-gradient-secondary" data-testid="text-team-value">4 Members</p>
+                    <p className="text-xs text-muted mt-1">All members active</p>
                   </div>
-                  <div className="bg-secondary bg-opacity-10 p-3 rounded-lg">
-                    <i className="fas fa-users text-secondary text-xl"></i>
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center hover-scale">
+                      <i className="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl opacity-20 animate-pulse-slow -z-10"></div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            <Card data-testid="card-submissions">
+            
+            <Card className="card-enhanced hover-lift bg-white/80 backdrop-blur-sm border border-white/20" data-testid="card-submissions">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted" data-testid="text-submissions-label">Submissions</p>
-                    <p className="text-2xl font-bold text-foreground" data-testid="text-submissions-value">2 / 3</p>
+                    <p className="text-3xl font-bold text-gradient" data-testid="text-submissions-value">2 / 3</p>
+                    <div className="mt-2">
+                      <div className="w-full bg-background rounded-full h-2">
+                        <div className="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full" style={{ width: '66%' }}></div>
+                      </div>
+                      <p className="text-xs text-muted mt-1">1 submission pending</p>
+                    </div>
                   </div>
-                  <div className="bg-accent bg-opacity-10 p-3 rounded-lg">
-                    <i className="fas fa-upload text-accent text-xl"></i>
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center hover-scale">
+                      <i className="fas fa-upload text-white text-2xl"></i>
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl opacity-20 animate-pulse-slow -z-10"></div>
                   </div>
                 </div>
               </CardContent>
@@ -75,76 +127,137 @@ export default function Dashboard() {
           </div>
 
           {/* Team Section */}
-          <Card className="mb-8" data-testid="card-team-section">
-            <CardHeader>
+          <Card className="card-enhanced hover-lift bg-white/80 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in-up" data-testid="card-team-section">
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-lg">
               <div className="flex items-center justify-between">
-                <CardTitle data-testid="text-team-name">Team: AI Innovators</CardTitle>
-                <Button data-testid="button-invite-member">
+                <div>
+                  <CardTitle className="text-gradient text-xl" data-testid="text-team-name">Team: AI Innovators 🚀</CardTitle>
+                  <p className="text-sm text-muted mt-1">Building the future together</p>
+                </div>
+                <Button className="btn-secondary-enhanced text-white border-0" data-testid="button-invite-member">
                   <i className="fas fa-plus mr-2"></i>Invite Member
                 </Button>
               </div>
             </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-4 p-4 bg-background rounded-lg" data-testid="member-alex">
-                  <img 
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
-                    alt="Alex Johnson profile" 
-                    className="w-12 h-12 rounded-full"
-                  />
+            <CardContent className="p-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="group flex items-center space-x-4 p-5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 hover-lift" data-testid="member-alex">
+                  <div className="relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
+                      alt="Alex Johnson profile" 
+                      className="w-14 h-14 rounded-full ring-4 ring-blue-100 group-hover:ring-blue-200 transition-all duration-300"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 status-online rounded-full border-2 border-white"></div>
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-medium" data-testid="text-member-name-alex">Alex Johnson</h3>
-                    <p className="text-sm text-muted" data-testid="text-member-role-alex">Team Lead • Full Stack Developer</p>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                      <span className="text-xs text-muted" data-testid="status-online-alex">Online</span>
+                    <div className="flex items-center space-x-2">
+                      <h3 className="font-semibold text-lg" data-testid="text-member-name-alex">Alex Johnson</h3>
+                      <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">LEAD</span>
+                    </div>
+                    <p className="text-sm text-muted font-medium" data-testid="text-member-role-alex">Full Stack Developer</p>
+                    <div className="flex items-center space-x-3 mt-2">
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse-slow"></div>
+                        <span className="text-xs text-green-600 font-medium" data-testid="status-online-alex">Online</span>
+                      </div>
+                      <div className="flex space-x-1">
+                        <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">React</span>
+                        <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Node.js</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 p-4 bg-background rounded-lg" data-testid="member-sarah">
-                  <img 
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
-                    alt="Sarah Chen profile" 
-                    className="w-12 h-12 rounded-full"
-                  />
+                
+                <div className="group flex items-center space-x-4 p-5 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100 hover-lift" data-testid="member-sarah">
+                  <div className="relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
+                      alt="Sarah Chen profile" 
+                      className="w-14 h-14 rounded-full ring-4 ring-purple-100 group-hover:ring-purple-200 transition-all duration-300"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 status-online rounded-full border-2 border-white"></div>
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-medium" data-testid="text-member-name-sarah">Sarah Chen</h3>
-                    <p className="text-sm text-muted" data-testid="text-member-role-sarah">UI/UX Designer</p>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                      <span className="text-xs text-muted" data-testid="status-online-sarah">Online</span>
+                    <h3 className="font-semibold text-lg" data-testid="text-member-name-sarah">Sarah Chen</h3>
+                    <p className="text-sm text-muted font-medium" data-testid="text-member-role-sarah">UI/UX Designer</p>
+                    <div className="flex items-center space-x-3 mt-2">
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse-slow"></div>
+                        <span className="text-xs text-green-600 font-medium" data-testid="status-online-sarah">Online</span>
+                      </div>
+                      <div className="flex space-x-1">
+                        <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">Figma</span>
+                        <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded text-xs">UI/UX</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 p-4 bg-background rounded-lg" data-testid="member-mike">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
-                    alt="Mike Rodriguez profile" 
-                    className="w-12 h-12 rounded-full"
-                  />
+                
+                <div className="group flex items-center space-x-4 p-5 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-100 hover-lift" data-testid="member-mike">
+                  <div className="relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
+                      alt="Mike Rodriguez profile" 
+                      className="w-14 h-14 rounded-full ring-4 ring-orange-100 group-hover:ring-orange-200 transition-all duration-300"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 status-away rounded-full border-2 border-white"></div>
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-medium" data-testid="text-member-name-mike">Mike Rodriguez</h3>
-                    <p className="text-sm text-muted" data-testid="text-member-role-mike">Backend Developer</p>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      <span className="text-xs text-muted" data-testid="status-away-mike">Away</span>
+                    <h3 className="font-semibold text-lg" data-testid="text-member-name-mike">Mike Rodriguez</h3>
+                    <p className="text-sm text-muted font-medium" data-testid="text-member-role-mike">Backend Developer</p>
+                    <div className="flex items-center space-x-3 mt-2">
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse-slow"></div>
+                        <span className="text-xs text-orange-600 font-medium" data-testid="status-away-mike">Away</span>
+                      </div>
+                      <div className="flex space-x-1">
+                        <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Python</span>
+                        <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">API</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 p-4 bg-background rounded-lg" data-testid="member-emma">
-                  <img 
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
-                    alt="Emma Wilson profile" 
-                    className="w-12 h-12 rounded-full"
-                  />
+                
+                <div className="group flex items-center space-x-4 p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-100 hover-lift" data-testid="member-emma">
+                  <div className="relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b589?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=48&h=48" 
+                      alt="Emma Wilson profile" 
+                      className="w-14 h-14 rounded-full ring-4 ring-emerald-100 group-hover:ring-emerald-200 transition-all duration-300"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 status-online rounded-full border-2 border-white"></div>
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-medium" data-testid="text-member-name-emma">Emma Wilson</h3>
-                    <p className="text-sm text-muted" data-testid="text-member-role-emma">Data Scientist</p>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                      <span className="text-xs text-muted" data-testid="status-online-emma">Online</span>
+                    <h3 className="font-semibold text-lg" data-testid="text-member-name-emma">Emma Wilson</h3>
+                    <p className="text-sm text-muted font-medium" data-testid="text-member-role-emma">Data Scientist</p>
+                    <div className="flex items-center space-x-3 mt-2">
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse-slow"></div>
+                        <span className="text-xs text-green-600 font-medium" data-testid="status-online-emma">Online</span>
+                      </div>
+                      <div className="flex space-x-1">
+                        <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded text-xs">ML</span>
+                        <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-xs">AI</span>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              
+              {/* Team Stats */}
+              <div className="mt-6 grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gradient">72h</div>
+                  <div className="text-xs text-muted">Total Work Time</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gradient-secondary">12</div>
+                  <div className="text-xs text-muted">Commits Today</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gradient">95%</div>
+                  <div className="text-xs text-muted">Sync Rate</div>
                 </div>
               </div>
             </CardContent>

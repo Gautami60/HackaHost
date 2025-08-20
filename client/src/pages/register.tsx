@@ -65,17 +65,28 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-4" data-testid="register-page">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <i className="fas fa-code text-primary text-2xl" data-testid="icon-logo"></i>
-            <span className="text-xl font-bold">HackFlow</span>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center px-4 py-8" data-testid="register-page">
+      {/* Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
+      </div>
+      
+      <Card className="w-full max-w-md card-enhanced hover-lift bg-white/80 backdrop-blur-sm border border-white/20">
+        <CardHeader className="text-center space-y-4 pb-8">
+          <div className="animate-fade-in-up">
+            <div className="flex items-center justify-center space-x-2 mb-6">
+              <div className="relative">
+                <i className="fas fa-code text-primary text-3xl hover-scale" data-testid="icon-logo"></i>
+                <div className="absolute -inset-2 bg-primary/10 rounded-full animate-pulse-slow"></div>
+              </div>
+              <span className="text-2xl font-bold text-gradient">HackFlow</span>
+            </div>
+            <CardTitle className="text-2xl font-bold text-gradient" data-testid="text-register-title">Create Account</CardTitle>
+            <CardDescription className="text-lg text-muted" data-testid="text-register-description">
+              Join the innovation community and start building
+            </CardDescription>
           </div>
-          <CardTitle data-testid="text-register-title">Create Account</CardTitle>
-          <CardDescription data-testid="text-register-description">
-            Join the innovation community
-          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4" data-testid="form-register">
