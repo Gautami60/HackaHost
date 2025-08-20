@@ -47,12 +47,12 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-6xl md:text-7xl font-bold mb-6" data-testid="text-hero-title">
-              Power Your Hackathons with 
-              <span className="text-gradient block mt-2"> AI-Driven Innovation</span>
+              Next-Generation Hackathons with 
+              <span className="text-gradient block mt-2">Intelligent AI Features</span>
             </h1>
             <p className="text-xl text-muted mb-12 max-w-4xl mx-auto leading-relaxed" data-testid="text-hero-description">
-              The complete platform for organizing, participating in, and judging hackathons. 
-              From team formation to project evaluation, we handle the workflow so you can focus on innovation.
+              Experience the future of hackathon management with AI-powered team formation, multi-round submissions, 
+              intelligent judging, real-time analytics, and seamless integrations that transform how innovation happens.
             </p>
           </div>
           
@@ -98,10 +98,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6" data-testid="text-features-title">
-              Everything You Need to Run Amazing Hackathons
+              AI-Powered Features That Revolutionize Hackathons
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              Streamline every aspect of your hackathon with our comprehensive platform
+              Leverage cutting-edge artificial intelligence to optimize every aspect of your hackathon experience
             </p>
           </div>
           
@@ -113,19 +113,19 @@ export default function Landing() {
                 </div>
                 <div className="absolute -inset-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors">AI-Powered Team Formation</h3>
-              <p className="text-muted leading-relaxed">Smart matchmaking based on skills, interests, and availability. Let AI help participants find their perfect teammates.</p>
+              <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors">🤖 AI-Powered Team Formation</h3>
+              <p className="text-muted leading-relaxed">Advanced machine learning algorithms analyze skills, experience, work styles, and compatibility to create optimal teams. Get real-time recommendations and compatibility scores.</p>
             </div>
             
             <div className="group card-enhanced bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover-lift" data-testid="card-feature-submissions">
               <div className="mb-6 relative">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <i className="fas fa-upload text-white text-2xl"></i>
+                  <i className="fas fa-layer-group text-white text-2xl"></i>
                 </div>
                 <div className="absolute -inset-2 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-secondary transition-colors">Multi-Round Submissions</h3>
-              <p className="text-muted leading-relaxed">Support for documents, GitHub links, videos with version control and automated deadline management.</p>
+              <h3 className="text-xl font-semibold mb-4 group-hover:text-secondary transition-colors">📋 Multi-Round Submissions</h3>
+              <p className="text-muted leading-relaxed">Progressive submission system with AI-powered code analysis, automated quality checks, and intelligent feedback loops across multiple rounds.</p>
             </div>
             
             <div className="group card-enhanced bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover-lift" data-testid="card-feature-judging">
@@ -135,8 +135,8 @@ export default function Landing() {
                 </div>
                 <div className="absolute -inset-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">Intelligent Judging</h3>
-              <p className="text-muted leading-relaxed">AI-assisted project reviews with automated scoring suggestions and standardized feedback generation.</p>
+              <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">⚖️ Intelligent Judging</h3>
+              <p className="text-muted leading-relaxed">AI-powered evaluation system with bias detection, consistency scoring, automated rubric generation, and intelligent ranking algorithms.</p>
             </div>
             
             <div className="group card-enhanced bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover-lift" data-testid="card-feature-communication">
@@ -146,8 +146,8 @@ export default function Landing() {
                 </div>
                 <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors">Real-Time Communication</h3>
-              <p className="text-muted leading-relaxed">Integrated chatbots, virtual assistants, and live event feeds to keep everyone connected.</p>
+              <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors">💬 Real-Time Communication</h3>
+              <p className="text-muted leading-relaxed">Smart messaging with AI moderators, automated translations, sentiment analysis, and intelligent conversation threading for seamless collaboration.</p>
             </div>
             
             <div className="group card-enhanced bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover-lift" data-testid="card-feature-analytics">
@@ -157,8 +157,8 @@ export default function Landing() {
                 </div>
                 <div className="absolute -inset-2 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-secondary transition-colors">Advanced Analytics</h3>
-              <p className="text-muted leading-relaxed">Predictive analytics for participation trends and comprehensive reporting for organizers.</p>
+              <h3 className="text-xl font-semibold mb-4 group-hover:text-secondary transition-colors">📊 Advanced Analytics</h3>
+              <p className="text-muted leading-relaxed">Machine learning insights with predictive modeling, performance forecasting, engagement analytics, and automated trend detection for data-driven decisions.</p>
             </div>
             
             <div className="group card-enhanced bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover-lift" data-testid="card-feature-integrations">
@@ -168,8 +168,8 @@ export default function Landing() {
                 </div>
                 <div className="absolute -inset-2 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">Seamless Integrations</h3>
-              <p className="text-muted leading-relaxed">Connect with Discord, GitHub, Slack, and other tools your teams already use.</p>
+              <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">🔗 Seamless Integrations</h3>
+              <p className="text-muted leading-relaxed">AI-powered integration hub with smart webhook processing, automated data sync, intelligent notification routing, and unified workflow management.</p>
             </div>
           </div>
         </div>

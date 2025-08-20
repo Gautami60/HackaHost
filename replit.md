@@ -1,8 +1,8 @@
-# HackFlow - Hackathon Management Platform
+# HackFlow - AI-Powered Hackathon Platform
 
 ## Overview
 
-HackFlow is a modern, scalable web platform designed for hosting hackathons and innovation events. The platform serves three main user roles: participants (who join teams and submit projects), judges (who evaluate submissions), and organizers (who manage events). The application provides comprehensive features including user registration, team management, project submission handling, multi-round evaluation systems, and role-based dashboards.
+HackFlow is an advanced, AI-powered web platform designed for hosting modern hackathons and innovation events. The platform revolutionizes traditional hackathon management by leveraging artificial intelligence across all core functions. It serves three main user roles: participants (who benefit from AI team formation and intelligent project guidance), judges (who use AI-assisted evaluation tools), and organizers (who access predictive analytics and automated management systems). The application provides cutting-edge features including AI-driven team formation, multi-round submission tracking, intelligent judging systems, real-time communication with smart moderation, advanced analytics with predictive modeling, and seamless third-party integrations.
 
 ## User Preferences
 
@@ -25,11 +25,12 @@ Preferred communication style: Simple, everyday language.
 - **Authentication**: Simple session-based authentication with role-based access control
 
 ### Database Design
-- **Schema Structure**: Five main entities (users, events, teams, submissions, scores)
-- **User Roles**: Participant, organizer, and judge roles with appropriate permissions
-- **Team Management**: Flexible team structure with leader designation and member arrays
-- **Submission System**: Support for multiple artifact types (GitHub links, demos, videos, documents)
-- **Scoring System**: Multi-criteria evaluation with judge-specific scoring
+- **Enhanced Schema**: Extended to support AI features with new entities (messages, aiInsights, teamFormationRequests, integrationEvents)
+- **AI Team Formation**: Advanced team formation system with skill matching, compatibility scoring, and preference algorithms
+- **Multi-Round Submissions**: Progressive submission tracking across multiple evaluation rounds with AI-powered analysis
+- **Intelligent Scoring**: Dynamic criteria-based scoring system with AI assistance and bias detection
+- **Real-Time Communication**: Message system with sentiment analysis, smart moderation, and automated translation support
+- **Integration Support**: Comprehensive webhook and API integration system for external tool connectivity
 
 ### Component Architecture
 - **UI Components**: Comprehensive shadcn/ui component library including forms, dialogs, cards, and navigation
@@ -84,3 +85,19 @@ Preferred communication style: Simple, everyday language.
 - **lucide-react**: Icon library
 - **nanoid**: Unique ID generation
 - **vaul**: Drawer component library
+
+## Recent Changes (Latest Session)
+
+### Major Platform Transformation - AI-Powered Features
+- **Complete Schema Redesign**: Added comprehensive AI-focused database schema including team formation requests, AI insights, real-time messaging, and integration events
+- **Landing Page Overhaul**: Updated to showcase AI-powered capabilities with enhanced feature descriptions emphasizing machine learning, predictive analytics, and intelligent automation
+- **Dashboard Enhancement**: Transformed participant dashboard to display AI metrics including team compatibility scores, AI analysis ratings, and real-time AI assistant activity
+- **Feature Focus Shift**: Platform now emphasizes AI-driven team formation, multi-round intelligent submissions, smart communication systems, advanced analytics with ML insights, and seamless integrations
+
+### AI-Powered Core Features
+1. **AI Team Formation**: Machine learning algorithms for optimal team composition based on skills, experience, and compatibility
+2. **Multi-Round Submissions**: Progressive submission system with AI-powered code analysis and quality feedback
+3. **Intelligent Judging**: AI-assisted evaluation with bias detection, consistency scoring, and automated rubric generation
+4. **Real-Time Communication**: Smart messaging with AI moderators, automated translations, and sentiment analysis
+5. **Advanced Analytics**: Predictive modeling for participation trends, performance forecasting, and automated insights
+6. **Seamless Integrations**: AI-powered integration hub with smart webhook processing and unified workflow management
