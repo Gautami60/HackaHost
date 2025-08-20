@@ -10,7 +10,13 @@ import Landing from "@/pages/landing";
 import Login from "@/pages/login";
 import Register from "@/pages/register";
 import Dashboard from "@/pages/dashboard";
+import Team from "@/pages/team";
+import Submissions from "@/pages/submissions";
+import Schedule from "@/pages/schedule";
+import Messages from "@/pages/messages";
 import JudgeDashboard from "@/pages/judge-dashboard";
+import JudgeOverview from "@/pages/judge-overview";
+import JudgeFeedback from "@/pages/judge-feedback";
 import OrganizerDashboard from "@/pages/organizer-dashboard";
 import NotFound from "@/pages/not-found";
 
@@ -39,8 +45,26 @@ function Router() {
       <Route path="/dashboard">
         <ProtectedRoute component={Dashboard} allowedRoles={["participant"]} />
       </Route>
+      <Route path="/team">
+        <ProtectedRoute component={Team} allowedRoles={["participant"]} />
+      </Route>
+      <Route path="/submissions">
+        <ProtectedRoute component={Submissions} allowedRoles={["participant"]} />
+      </Route>
+      <Route path="/schedule">
+        <ProtectedRoute component={Schedule} allowedRoles={["participant"]} />
+      </Route>
+      <Route path="/messages">
+        <ProtectedRoute component={Messages} allowedRoles={["participant"]} />
+      </Route>
       <Route path="/judge-dashboard">
         <ProtectedRoute component={JudgeDashboard} allowedRoles={["judge"]} />
+      </Route>
+      <Route path="/judge-overview">
+        <ProtectedRoute component={JudgeOverview} allowedRoles={["judge"]} />
+      </Route>
+      <Route path="/judge-feedback">
+        <ProtectedRoute component={JudgeFeedback} allowedRoles={["judge"]} />
       </Route>
       <Route path="/organizer-dashboard">
         <ProtectedRoute component={OrganizerDashboard} allowedRoles={["organizer"]} />

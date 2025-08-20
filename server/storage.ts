@@ -116,6 +116,8 @@ export class MemStorage implements IStorage {
     const user: User = { 
       ...insertUser, 
       id,
+      role: insertUser.role || "participant",
+      skills: insertUser.skills || null,
       createdAt: new Date(),
     };
     this.users.set(id, user);
@@ -140,6 +142,7 @@ export class MemStorage implements IStorage {
     const event: Event = {
       ...eventData,
       id,
+      maxTeamSize: eventData.maxTeamSize || 4,
       status: "upcoming",
       createdAt: new Date(),
     };
@@ -158,7 +161,7 @@ export class MemStorage implements IStorage {
 
   async getTeamByUserAndEvent(userId: string, eventId: string): Promise<Team | undefined> {
     return Array.from(this.teams.values()).find(team => 
-      team.eventId === eventId && (team.leaderId === userId || team.members.includes(userId))
+      team.eventId === eventId && (team.leaderId === userId || (team.members && team.members.includes(userId)))
     );
   }
 
@@ -176,7 +179,7 @@ export class MemStorage implements IStorage {
 
   async addTeamMember(teamId: string, userId: string): Promise<void> {
     const team = this.teams.get(teamId);
-    if (team && !team.members.includes(userId)) {
+    if (team && team.members && !team.members.includes(userId)) {
       team.members.push(userId);
       this.teams.set(teamId, team);
     }
@@ -184,7 +187,7 @@ export class MemStorage implements IStorage {
 
   async removeTeamMember(teamId: string, userId: string): Promise<void> {
     const team = this.teams.get(teamId);
-    if (team) {
+    if (team && team.members) {
       team.members = team.members.filter(id => id !== userId);
       this.teams.set(teamId, team);
     }
@@ -208,6 +211,11 @@ export class MemStorage implements IStorage {
     const submission: Submission = {
       ...insertSubmission,
       id,
+      description: insertSubmission.description || null,
+      githubUrl: insertSubmission.githubUrl || null,
+      demoUrl: insertSubmission.demoUrl || null,
+      videoUrl: insertSubmission.videoUrl || null,
+      documentUrl: insertSubmission.documentUrl || null,
       submittedAt: new Date(),
     };
     this.submissions.set(id, submission);
@@ -244,6 +252,7 @@ export class MemStorage implements IStorage {
     const score: Score = {
       ...scoreData,
       id,
+      feedback: scoreData.feedback || null,
       createdAt: new Date(),
     };
     this.scores.set(id, score);
